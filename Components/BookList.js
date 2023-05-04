@@ -1,5 +1,5 @@
 import { getListData } from "@/redux/actions/listactions";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Book from "./Book";
@@ -78,6 +78,7 @@ const BookList = () => {
   
   return (
     <>
+    <Box style={{display:'flex'}} >
     <ContainerDropDown>
     <FormControl fullWidth>
         <Select
@@ -95,8 +96,12 @@ const BookList = () => {
           ))}
         </Select>
       </FormControl>
-    </ContainerDropDown>
-      
+    </ContainerDropDown> 
+   
+      <Typography variant="h2" color='#2a0845' style={{margin:'10px 320px'}}>
+        Book Store
+      </Typography>
+      </Box>
       {data?.map((book) => (
         <Container key={book.id}>
           <Book book={book} sortedTitle={sortedTitle} />

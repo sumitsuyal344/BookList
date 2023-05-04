@@ -15,3 +15,8 @@ cursor: pointer;
   color: rgb(210, 100, 237);
   cursor: pointer;
   }
+
+  .cardheader:hover{
+    color: rgb(42, 142, 235);
+    font-weight: bold;
+  }

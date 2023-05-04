@@ -68,9 +68,10 @@ const Book = ({ book, sortedTitle }) => {
       <CardBook>
         <Box style={{ display: "flex" }}>
           <CardHeader
-            title={book.title}
+            title={" Book  Title:   " +   book.title}
             onClick={() => handleTitleClick()}
             style={{ cursor: "pointer" }}
+            className="cardheader"
           />
           <Box style={{ marginLeft: "auto" }}>
             <AddShoppingCartIcon
@@ -94,16 +95,23 @@ const Book = ({ book, sortedTitle }) => {
           image={book.image}
           alt="Paella dish"
           style={{
-            maxWidth: 600,
+            maxWidth: 700,
             maxHeight: 300,
           }}
         />
 
         <CardContent>
-          <Typography color="red" variant="h6">
+          <Box style={{display:'flex'}}>
+          <Typography color="red" variant="h5" >
             {" "}
-            {book.author}
+           Written By:  {book.author}
           </Typography>
+          <Typography color="black" variant="h6" style={{marginLeft:'auto',fontWeight:'bold'}} >
+            {" "}
+           Genre: {book.genre}
+          </Typography>
+          </Box>
+         
 
           <Typography style={{ marginLeft: "-23px" }}>
             <ExpandMore
@@ -112,13 +120,13 @@ const Book = ({ book, sortedTitle }) => {
               aria-expanded={expanded}
               aria-label="show more"
             >
-              <Button variant="text">read more...</Button>
+              <Button variant="text" >read more...</Button>
             </ExpandMore>
           </Typography>
         </CardContent>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph variant="h6">
+            <Typography paragraph variant="h6" style={{fontWeight:"bold"}}>
               Description:
             </Typography>
             <Typography paragraph>{book.description}</Typography>
